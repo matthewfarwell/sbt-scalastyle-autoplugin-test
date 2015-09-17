@@ -25,11 +25,11 @@ object ScalastylePluginSettings extends AutoPlugin {
 
   lazy val testSettings = Seq(
     (scalastyleConfig in Test) := sbtCommonDir.value / "scalastyle-test-config.xml",
-    (scalastyleTarget in Test) := target.value / "checkstyle-scalastyle-test.xml",
+    (scalastyleTarget in Test) := target.value / "checkstyle-scalastyle-test.xml"
 
     // Temporary fix for https://github.com/scalastyle/scalastyle-sbt-plugin/issues/44
-    (scalastyleConfig in scalastyle) := sbtCommonDir.value / "scalastyle-test-config.xml",
-    (scalastyleTarget in scalastyle) := target.value / "checkstyle-scalastyle-test.xml"
+    // (scalastyleConfig in scalastyle) := sbtCommonDir.value / "scalastyle-test-config.xml",
+    // (scalastyleTarget in scalastyle) := target.value / "checkstyle-scalastyle-test.xml"
   )
 
   lazy val sbtCommonDir = baseDirectory { _ / "project" / "sbt-common" }
